@@ -76,179 +76,242 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("CO2 Calculator"),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(40.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              // Text(
-              //   "Height Of The Tree : $num1",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "Circumstance Of The Tree : $num2",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "Age Of The Tree : $num3",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "diameter : $diameter",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "weight : $weight",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "hdw : $hdw",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "greenWeight : $greenWeight",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "dryWeight : $dryWeight",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "carbonAmount : $carbonAmount",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "carbonComposition : $carbonComposition",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "carbonQuantity : $carbonQuantity",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "co2SequestratedAmountPerYear : $co2SequestratedAmountPerYear",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "co2SequestratedAmountPerYearInKg : $co2SequestratedAmountPerYearInKg",
-              // ),
-              // SizedBox(height: 20),
-              // Text(
-              //   "Output perDay: $perDay",
-              //   style: TextStyle(
-              //       fontSize: 20.0,
-              //       fontWeight: FontWeight.bold,
-              //       color: Colors.purple),
-              // ),
-              SizedBox(
-                height: 25,
+      backgroundColor: Colors.red,
+      // appBar: AppBar(
+      //   title: Text("CO2 Calculator"),
+      // ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25)
               ),
-              TextField(
-                keyboardType: TextInputType.number,
-                decoration:
-                    InputDecoration(hintText: "Enter height of the tree"),
-                controller: heightOfTheTree,
-              ),
-              TextField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                    hintText: "Enter circumference of the tree"),
-                controller: circumstanceOfTheTree,
-              ),
-              TextField(
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(hintText: "Enter age of the tree"),
-                controller: ageOfTheTree,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              height: MediaQuery.of(context).size.height - 100,
+              padding: const EdgeInsets.all(40.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  ConstrainedBox(
-              constraints: BoxConstraints.tightFor(width: 100, height: 100),
-              child: ElevatedButton(
-                child: Text('Calculate', style: TextStyle(fontSize: 15),),
-                onPressed: () {
-                      doAddition();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ResultPage(
-                                num1,
-                                num2,
-                                num3,
-                                sum,
-                                diameter,
-                                weight,
-                                hdw,
-                                greenWeight,
-                                dryWeight,
-                                carbonAmount,
-                                carbonComposition,
-                                carbonQuantity,
-                                co2SequestratedAmountPerYear,
-                                co2SequestratedAmountPerYearInKg,
-                                perDay)),
-                      );
-                    },
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                ),
+                  Text(
+                    'CALCULATE THE CO2 SEQURSTRATED AMOUNT IN A TREE PER DAY',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  // Text(
+                  //   "Height Of The Tree : $num1",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "Circumstance Of The Tree : $num2",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "Age Of The Tree : $num3",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "diameter : $diameter",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "weight : $weight",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "hdw : $hdw",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "greenWeight : $greenWeight",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "dryWeight : $dryWeight",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "carbonAmount : $carbonAmount",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "carbonComposition : $carbonComposition",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "carbonQuantity : $carbonQuantity",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "co2SequestratedAmountPerYear : $co2SequestratedAmountPerYear",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "co2SequestratedAmountPerYearInKg : $co2SequestratedAmountPerYearInKg",
+                  // ),
+                  // SizedBox(height: 20),
+                  // Text(
+                  //   "Output perDay: $perDay",
+                  //   style: TextStyle(
+                  //       fontSize: 20.0,
+                  //       fontWeight: FontWeight.bold,
+                  //       color: Colors.purple),
+                  // ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  TextField(
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(fontSize: 20),
+                    decoration: InputDecoration(
+                      hintText: 'Height',
+                      hintStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
+                    ),
+                    controller: heightOfTheTree,
+                  ),
+                  SizedBox(height: 10),
+                  TextField(
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(fontSize: 20),
+                    decoration: InputDecoration(
+                      hintText: "Circumference",
+                      hintStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
+                    ),
+                    controller: circumstanceOfTheTree,
+                  ),
+                  SizedBox(height: 10),
+                  TextField(
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(fontSize: 20),
+                    decoration: InputDecoration(
+                      hintText: "Age",
+                      hintStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32.0)),
+                    ),
+                    controller: ageOfTheTree,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40.0),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      ConstrainedBox(
+                        constraints:
+                            BoxConstraints.tightFor(width: 120, height: 120),
+                        child: ElevatedButton(
+                          child: Text(
+                            'Calculate',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87),
+                          ),
+                          onPressed: () {
+                            doAddition();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ResultPage(
+                                      num1,
+                                      num2,
+                                      num3,
+                                      sum,
+                                      diameter,
+                                      weight,
+                                      hdw,
+                                      greenWeight,
+                                      dryWeight,
+                                      carbonAmount,
+                                      carbonComposition,
+                                      carbonQuantity,
+                                      co2SequestratedAmountPerYear,
+                                      co2SequestratedAmountPerYearInKg,
+                                      perDay)),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: CircleBorder(),
+                          ),
+                        ),
+                      ),
+                      // MaterialButton(
+                      //   child: Text("CALCULATE"),
+                      //   color: Colors.greenAccent,
+                      //   onPressed: () {
+                      //     doAddition();
+                      //     Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => ResultPage(
+                      //               num1,
+                      //               num2,
+                      //               num3,
+                      //               sum,
+                      //               diameter,
+                      //               weight,
+                      //               hdw,
+                      //               greenWeight,
+                      //               dryWeight,
+                      //               carbonAmount,
+                      //               carbonComposition,
+                      //               carbonQuantity,
+                      //               co2SequestratedAmountPerYear,
+                      //               co2SequestratedAmountPerYearInKg,
+                      //               perDay)),
+                      //     );
+                      //   },
+                      // ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        width: 150,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.yellow,
+                          ),
+
+                          child: Text(
+                            "Clear",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87),
+                          ),
+                          // color: Colors.greenAccent,
+                          onPressed: doClear,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
-                  // MaterialButton(
-                  //   child: Text("CALCULATE"),
-                  //   color: Colors.greenAccent,
-                  //   onPressed: () {
-                  //     doAddition();
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => ResultPage(
-                  //               num1,
-                  //               num2,
-                  //               num3,
-                  //               sum,
-                  //               diameter,
-                  //               weight,
-                  //               hdw,
-                  //               greenWeight,
-                  //               dryWeight,
-                  //               carbonAmount,
-                  //               carbonComposition,
-                  //               carbonQuantity,
-                  //               co2SequestratedAmountPerYear,
-                  //               co2SequestratedAmountPerYearInKg,
-                  //               perDay)),
-                  //     );
-                  //   },
-                  // ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    child: Text("Clear"),
-                    // color: Colors.greenAccent,
-                    onPressed: doClear,
-                  ),
-                ],
-              )
-            ],
           ),
         ),
       ),

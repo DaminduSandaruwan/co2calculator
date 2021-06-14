@@ -1,4 +1,3 @@
-import 'package:co2calculator/homepage.dart';
 import 'package:co2calculator/spalshScreen.dart';
 import 'package:flutter/material.dart';
 

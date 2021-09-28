@@ -115,7 +115,7 @@ class _ResultPageState extends State<ResultPage> {
                             border: Border.all(color: Colors.black, width: 2),
                             borderRadius: BorderRadius.circular(25)),
                         child: Text(
-                          "${widget.co2SequestratedAmountPerYear.toString().substring(0,5)}",
+                          "${widget.co2SequestratedAmountPerYearInKg.toString().substring(0,5)}",                          
                           style: TextStyle(
                               fontSize: 25.0,
                               fontWeight: FontWeight.bold,

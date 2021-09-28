@@ -95,6 +95,33 @@ class _ResultPageState extends State<ResultPage> {
                               color: Colors.purple),
                         ),
                       ),
+                      SizedBox(height: 20),
+                      Text(
+                        'THE CO2 SEQURSTRATED AMOUNT IN A TREE PER YEAR IS ',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.wendyOne(
+                        textStyle: TextStyle(
+                          fontFamily: 'Sensi',
+                          fontSize: 22,
+                          // fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                            // color: Colors.red,
+                            border: Border.all(color: Colors.black, width: 2),
+                            borderRadius: BorderRadius.circular(25)),
+                        child: Text(
+                          "${widget.co2SequestratedAmountPerYear.toString().substring(0,5)}",
+                          style: TextStyle(
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.purple),
+                        ),
+                      ),
                       // Text(
 
                       //   "Output (perday): ${widget.perDay.toString().substring(0,5)}",
